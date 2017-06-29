@@ -20,6 +20,15 @@ document.write("<p>JavaScript テスト</p>");
   console.log(a != null); // true
   var b = document.getElementById('b');
   console.log(b != null); // false
+
+  var money = 10000;
+  if (money > 5000) {
+    document.write("お金持ち");
+  } else if (money > 3000){
+    document.write("普通");
+  } else {
+    document.write("貧乏");
+  }
 </script>
 
 <form name="timer">
@@ -32,6 +41,9 @@ document.write("<p>JavaScript テスト</p>");
 
 </script>
 <div id="b"></div>
+
+
+<p id="test">初めてのJavaScript勉強中だよ！</p>
 
 <script>
 
@@ -61,6 +73,7 @@ function startfnc()
 {
   //関数hyoji()を1000ミリ秒間隔で呼び出す
   setInterval("hyoji()",100);
+  console.log(document.getElementById("test"));
 }
 
 startfnc()
@@ -73,6 +86,9 @@ function changeColor(newColor) {
   elem.style.color = newColor;
 }
 </script>
+
+
+
 
 <p id="para1">Some text here</p>
 <button onclick="changeColor('blue');">blue</button>
