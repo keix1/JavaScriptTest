@@ -1,3 +1,8 @@
+render‚Æ‚©‚Ìg‚¢•ûŒŸõ‚Åo‚Ä‚­‚é
+https://yoshio3.com/2011/01/18/jsf-20-ajax-support/
+
+
+
 <f:ajax render=":f1"/>‚ğ–`“ª‚É‘‚­‚Æ‚Ç‚¤‚È‚é‚Ì‚©
 http://d.hatena.ne.jp/jabaraster/20110403/1301827221
 
