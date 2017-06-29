@@ -1,0 +1,91 @@
+<f:ajax render=":f1"/>Çñ`ì™Ç…èëÇ≠Ç∆Ç«Ç§Ç»ÇÈÇÃÇ©
+http://d.hatena.ne.jp/jabaraster/20110403/1301827221
+
+jsf f ajax setInterval
+Ç≈Googleåüçı
+
+https://stackoverflow.com/questions/11228198/jsf-refresh-periodically-a-component-with-ajax
+
+
+https://stackoverflow.com/questions/24646211/polling-using-fajax-hi-have-been-using-setinterval-and-fajax-to-poll-below-i
+
+à»â∫égÇ¶ÇªÇ§ÅHdocument.getElementById("form:changeme")Ç…ïœÇ¶ÇÍÇŒ
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <h:body>
+
+    <script>
+    setInterval(function() { 
+        document.getElementById("changeme").click();
+        }, 3000);
+    </script>
+        <h3>JSF 2.0 + Ajax Hello World Example</h3>
+
+        <h:form>
+           <h:inputText id="name" value="#{helloBean.name}"></h:inputText>
+           <h:commandButton value="Welcome Me">
+             <f:ajax execute="name" render="output" />
+           </h:commandButton>
+
+           <h2><h:outputText id="output" value="#{helloBean.sayWelcome}" /></h2>
+           <h2><h:outputText id="countsee" value="#{helloBean.name}" /></h2>    
+
+<h:commandButton id="changeme" style="display:none">
+    <f:ajax execute="@this" listener="#{helloBean.updates}" render="countsee" ></f:ajax>
+</h:commandButton>
+        </h:form>
+
+    </h:body>
+</html>
+
+
+
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
+import javax.faces.event.AjaxBehaviorEvent;
+
+import java.io.Serializable;
+
+@ManagedBean
+@SessionScoped
+public class HelloBean implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    private String name;
+    private static int count;
+
+    public int getCount() {
+        return count;
+    }
+    public void setCount(int count) {
+        this.count = count;
+    }
+    public String getName() {
+       return name;
+    }
+    public void setName(String name) {
+       this.name = name;
+    }
+    public String getSayWelcome(){
+       //check if null?
+       if("".equals(name) || name ==null){
+        return "";
+       }else{
+        return "Ajax message : Welcome " + name;
+       }
+    }
+    public void getUpdates(ActionBehaviorEvent event){
+           System.out.println("Printing"+count);
+           this.name=name+"agdam";
+
+    }
+} 
