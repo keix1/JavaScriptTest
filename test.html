@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<title>JavaScript テスト</title>
+</head>
+<body>
+
+<script type="text/javascript">
+//<![CDATA[
+
+document.write("<p>JavaScript テスト</p>");
+
+//]]>
+</script>
+
+<script>
+  var a = document.getElementById('a');
+  console.log(a != null); // true
+  var b = document.getElementById('b');
+  console.log(b != null); // false
+</script>
+
+<form name="timer">
+<input type="button" value="スタート" onclick="startfnc()"><br>
+<input type="text" name="moji" size="30" value="">
+</form>
+
+<div id="a"></div>
+<script type="text/javascript" src="test.js">
+
+</script>
+<div id="b"></div>
+
+<script>
+
+function hyoji()
+{
+  //表示する文字
+  var str = "一文字ずつ表示します。";  
+
+  //テキストボックスの文字数
+  var cnt = document.timer.moji.value.length;
+
+  //文字が全部表示されているか確認
+  if ( cnt < 11 )
+  {
+    //現在より1文字多く切り出して表示
+    document.timer.moji.value = str.substr(0,cnt+1);
+  }
+  else
+  {
+    //全て表示されたら、空文字に戻す
+    document.timer.moji.value = "";
+  }
+}
+
+
+function startfnc()
+{
+  //関数hyoji()を1000ミリ秒間隔で呼び出す
+  setInterval("hyoji()",100);
+}
+
+startfnc()
+
+</script>
+
+
+</body>
+</html>
