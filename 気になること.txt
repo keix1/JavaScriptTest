@@ -1,3 +1,11 @@
+
+便利なURL集
+
+＞ビーンのスコープの使い分け
+http://kikutaro777.hatenablog.com/entry/2013/04/07/235640
+
+
+
 renderとかの使い方検索で出てくる
 https://yoshio3.com/2011/01/18/jsf-20-ajax-support/
 

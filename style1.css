@@ -1,0 +1,62 @@
+#tooltip{
+    margin:70px 0  0  30px;
+}
+#tooltip li{
+    width:150px;
+    height:50px;
+    display:block;
+    float:left; 
+    position:relative;      
+}
+#tooltip li > div {
+    width: 150px;
+    min-height: 20px;
+    position: absolute;
+    top:-50px;
+    margin-left: -25px;
+    padding: 5px;
+    visibility:hidden;
+    opacity: 0;
+    background: #ffffff;
+    font-size:1em;
+
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px; 
+    border-radius: 5px; 
+
+    -moz-box-shadow: 0 0 8px gray; 
+    -webkit-box-shadow: 0 0 8px gray; 
+    filter: progid:DXImageTransform.Microsoft.Shadow(color='#272229', Direction=135, Strength=3); 
+    box-shadow: 0 0 8px gray; 
+    
+  　-moz-transition: all 0.5s ease-in-out; 
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out; 
+    transition: all 0.5s ease-in-out;
+}
+#tooltip li > div:after {
+    content:"\25B8"; 
+    display:block;
+    font-size:2em;
+    height:0;
+    line-height:0;
+    position:absolute;
+    color:#fff;
+    bottom:-3px;
+    left:1px;
+    text-align:center;
+    -moz-transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    width:100%;
+    text-shadow: 3px 0 2px #ccc;
+}
+#tooltip li:hover > div {
+    visibility:visible;
+    opacity: 1;
+    top:-50px;
+
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out; 
+    -o-transition: all 0.5s ease-in-out; 
+    transition: all 0.5s ease-in-out;
+}
